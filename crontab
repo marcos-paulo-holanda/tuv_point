@@ -1,8 +1,4 @@
-# Use a shell padrão
 SHELL=/bin/bash
-# Diretório de trabalho padrão
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-
-# Rodar o script Python às 7:00 e 17:18 (horário de Brasília)
 0 7 * * * root python /app/script.py >> /var/log/cron.log 2>&1
 18 17 * * * root python /app/script.py >> /var/log/cron.log 2>&1
