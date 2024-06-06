@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
 from datetime import datetime
 import time
 
@@ -20,7 +21,7 @@ def timer_trigger(myTimer: func.TimerRequest) -> None:
     options.add_argument("--headless")
     options.add_argument("--window-size=1920,1080")  # Define um tamanho de janela para forçar a renderização
 
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(service=Service('./chromedriver.exe'), options=options)
     driver.get("https://asp4.softtrade.com.br/RHOnline_ELO_TUV/login.xhtml")
 
     # Aguarde a página carregar
